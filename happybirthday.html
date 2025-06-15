@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chúc mừng sinh nhật Ba!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffe6e6;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+      color: #d6336c;
+      margin-top: 50px;
+      font-size: 3em;
+    }
+
+    .message {
+      text-align: center;
+      font-size: 1.5em;
+      color: #333;
+      margin: 20px auto 40px;
+      width: 80%;
+      max-width: 700px;
+      line-height: 1.6;
+    }
+
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+
+    .gallery img {
+      width: 250px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .video-container {
+      text-align: center;
+      margin: 40px 0 100px;
+    }
+
+    video {
+      width: 80%;
+      max-width: 600px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    /* Heart animation */
+    .heart {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 5s linear infinite;
+      opacity: 0.6;
+      z-index: 999;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Chúc mừng sinh nhật Ba!</h1>
+
+  <div class="message">
+    Cảm ơn Ba vì tất cả những hy sinh thầm lặng và tình yêu vô bờ bến dành cho gia đình mình. <br>
+    Hôm nay là ngày đặc biệt, con chúc Ba luôn mạnh khỏe, hạnh phúc và luôn nở nụ cười thật rạng rỡ. <br>
+    Con tự hào khi được làm con của Ba!
+  </div>
+
+  <div class="gallery">
+    <img src="ba2.jpg" alt="Ảnh 1">
+    <img src="ba1.jpg" alt="Ảnh 2">
+    <img src="ba3.jpg" alt="Ảnh 3">
+    <img src="ba4.jpg" alt="Ảnh 4">
+    <img src="ba5.jpg" alt="Ảnh 5">
+  </div>
+
+  <div class="video-container">
+    <video controls>
+      <source src="video.mp4" type="video/mp4">
+      Trình duyệt của bạn không hỗ trợ video.
+    </video>
+  </div>
+
+  <!-- Heart animation layer -->
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (3 + Math.random() * 2) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+
+</body>
+</html>
